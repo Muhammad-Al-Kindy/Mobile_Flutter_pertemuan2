@@ -658,16 +658,232 @@ class TugasGridView extends StatelessWidget {
 }
 
 class Praktikum extends StatelessWidget {
+  Praktikum({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Custom Fonts',
+      // Set Raleway as the default app font.
+      theme: ThemeData(fontFamily: 'assets/fonts/Poppins-Regular.ttf'),
+      home: HomePage(),
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-          appBar: AppBar(
-        title: Text(
-          "MyApp",
-        ),
-      )),
     );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        // The AppBar uses the app-default Raleway font.
+        appBar: AppBar(
+          title: Text('Manchester United'),
+          backgroundColor: Color.fromARGB(255, 177, 11, 11),
+        ),
+        body: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: Column(
+                children: <Widget>[
+                  SizedBox(
+                    child: Row(
+                      children: [
+                        Container(
+                          padding: const EdgeInsets.all(5.0),
+                          decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 177, 11, 11),
+                              border: Border(
+                                right: BorderSide(
+                                    width: 4,
+                                    color: Color.fromARGB(255, 248, 243, 243)),
+                              )),
+                          alignment: Alignment.center,
+                          height: 40,
+                          width: 205.5,
+                          child: Text(
+                            'News',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontFamily: 'assets/fonts/Poppins-Regular.ttf'),
+                          ),
+                        ),
+                        Container(
+                          color: Color.fromARGB(255, 177, 11, 11),
+                          alignment: Alignment.center,
+                          height: 40,
+                          width: 205.5,
+                          child: Text(
+                            'Match',
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.white,
+                                fontFamily: 'assets/fonts/Poppins-Regular.ttf'),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        banner(),
+                        berita(),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ));
+  }
+}
+
+class banner extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        Container(
+          padding: EdgeInsets.all(3),
+          color: Color.fromARGB(255, 177, 11, 11),
+          height: 345,
+          width: 411,
+          alignment: Alignment.bottomLeft,
+          child: Text("Transfer",
+              style: TextStyle(fontSize: 25, color: Colors.white)),
+        ),
+        Container(
+          color: Color.fromARGB(255, 255, 255, 255),
+          alignment: Alignment.bottomCenter,
+          child: Text("Theatre Of Dreams",
+              style: TextStyle(
+                  fontFamily: 'assets/fonts/Poppins-Regular.ttf',
+                  fontSize: 30,
+                  color: Color.fromARGB(255, 0, 0, 0))),
+          height: 310.0,
+          width: 411,
+        ),
+        Container(
+          alignment: Alignment.center,
+          child: Image(
+            image: AssetImage("assets/img/Manchester_United_Old_Trafford.jpg"),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class berita extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: <Widget>[
+      Row(
+        children: [
+          Container(
+            margin: EdgeInsets.only(top: 10, left: 1),
+            padding: const EdgeInsets.all(10.0),
+            decoration: BoxDecoration(
+              border: Border(
+                  top:
+                      BorderSide(width: 1, color: Color.fromARGB(255, 0, 0, 0)),
+                  right: BorderSide(
+                      width: 1, color: Color.fromARGB(255, 0, 0, 0))),
+            ),
+            alignment: Alignment.center,
+            height: 130,
+            width: 205,
+            child: Text(
+              'Usai Jeda Internasional, Manchester United Dapat Tambahan Amunisi di Lini Pertahanan?',
+              style: TextStyle(
+                  fontSize: 17,
+                  color: Color.fromARGB(255, 0, 0, 0),
+                  fontFamily: 'assets/fonts/Poppins-Regular.ttf'),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 10),
+            alignment: Alignment.center,
+            height: 130,
+            width: 205,
+            child: Image(
+              image: AssetImage("assets/img/Pemain_united.jpg"),
+            ),
+          ),
+        ],
+      ),
+      Container(
+        padding: const EdgeInsets.all(3.0),
+        decoration: BoxDecoration(
+          border: Border.all(width: 1, color: Color.fromARGB(255, 0, 0, 0)),
+        ),
+        alignment: Alignment.centerLeft,
+        height: 50,
+        width: 410,
+        child: Text(
+          ' Manchester 9 September 2023',
+          style: TextStyle(
+              fontSize: 17,
+              color: Color.fromARGB(255, 0, 0, 0),
+              fontFamily: 'assets/fonts/Poppins-Regular.ttf'),
+        ),
+      ),
+      Row(
+        children: [
+          Container(
+            margin: EdgeInsets.only(top: 10, left: 1),
+            padding: const EdgeInsets.all(10.0),
+            decoration: BoxDecoration(
+              border: Border(
+                  top:
+                      BorderSide(width: 1, color: Color.fromARGB(255, 0, 0, 0)),
+                  right: BorderSide(
+                      width: 1, color: Color.fromARGB(255, 0, 0, 0))),
+            ),
+            alignment: Alignment.center,
+            height: 130,
+            width: 205,
+            child: Text(
+              'Usai Jeda Internasional, Manchester United Dapat Tambahan Amunisi di Lini Pertahanan?',
+              style: TextStyle(
+                  fontSize: 17,
+                  color: Color.fromARGB(255, 0, 0, 0),
+                  fontFamily: 'assets/fonts/Poppins-Regular.ttf'),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 10),
+            alignment: Alignment.center,
+            height: 130,
+            width: 205,
+            child: Image(
+              image: AssetImage("assets/img/Pemain_united.jpg"),
+            ),
+          ),
+        ],
+      ),
+      Container(
+        padding: const EdgeInsets.all(3.0),
+        decoration: BoxDecoration(
+          border: Border.all(width: 1, color: Color.fromARGB(255, 0, 0, 0)),
+        ),
+        alignment: Alignment.centerLeft,
+        height: 50,
+        width: 410,
+        child: Text(
+          ' Manchester 9 September 2023',
+          style: TextStyle(
+              fontSize: 17,
+              color: Color.fromARGB(255, 0, 0, 0),
+              fontFamily: 'assets/fonts/Poppins-Regular.ttf'),
+        ),
+      ),
+    ]);
   }
 }
