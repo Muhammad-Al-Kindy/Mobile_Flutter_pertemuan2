@@ -82,3 +82,4 @@ Build in Widget
 
 2.5.22 Praktikum
 ![Alt text](img/praktikum.png)
+![Alt text](img/praktikum2.png)
